@@ -35,7 +35,7 @@ Public Class Create_Account
         End Try
     End Sub
 
-    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Close()
         Form1.Show()
     End Sub

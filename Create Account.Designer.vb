@@ -22,10 +22,9 @@ Partial Class Create_Account
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Panel1 = New Panel()
-        Panel2 = New Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Create_Account))
         lblCreateAccount = New Label()
-        btnClose = New Button()
+        btnBack = New Button()
         Panel3 = New Panel()
         cbxShow = New CheckBox()
         btnCreate = New Button()
@@ -33,69 +32,54 @@ Partial Class Create_Account
         txtUsername = New TextBox()
         lblPassword = New Label()
         lblUsername = New Label()
-        Panel2.SuspendLayout()
         Panel3.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.DarkViolet
-        Panel1.Dock = DockStyle.Bottom
-        Panel1.Location = New Point(0, 391)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(664, 37)
-        Panel1.TabIndex = 0
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BackColor = Color.DarkViolet
-        Panel2.Controls.Add(lblCreateAccount)
-        Panel2.Controls.Add(btnClose)
-        Panel2.Dock = DockStyle.Top
-        Panel2.Location = New Point(0, 0)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(664, 76)
-        Panel2.TabIndex = 1
         ' 
         ' lblCreateAccount
         ' 
         lblCreateAccount.AutoSize = True
+        lblCreateAccount.BackColor = SystemColors.HotTrack
         lblCreateAccount.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCreateAccount.Location = New Point(201, 23)
+        lblCreateAccount.Location = New Point(218, 20)
         lblCreateAccount.Name = "lblCreateAccount"
         lblCreateAccount.Size = New Size(213, 37)
         lblCreateAccount.TabIndex = 1
         lblCreateAccount.Text = "Create Account"
         ' 
-        ' btnClose
+        ' btnBack
         ' 
-        btnClose.BackColor = Color.Crimson
-        btnClose.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnClose.Location = New Point(529, 23)
-        btnClose.Name = "btnClose"
-        btnClose.Size = New Size(44, 30)
-        btnClose.TabIndex = 0
-        btnClose.Text = "X"
-        btnClose.UseVisualStyleBackColor = False
+        btnBack.BackColor = Color.Crimson
+        btnBack.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnBack.Location = New Point(509, 242)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(80, 30)
+        btnBack.TabIndex = 0
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = False
         ' 
         ' Panel3
         ' 
         Panel3.BackColor = Color.DarkViolet
+        Panel3.BackgroundImage = My.Resources.Resources.road_signs_7055475_960_720
+        Panel3.BackgroundImageLayout = ImageLayout.Stretch
+        Panel3.Controls.Add(btnBack)
+        Panel3.Controls.Add(lblCreateAccount)
         Panel3.Controls.Add(cbxShow)
         Panel3.Controls.Add(btnCreate)
         Panel3.Controls.Add(txtPassword)
         Panel3.Controls.Add(txtUsername)
         Panel3.Controls.Add(lblPassword)
         Panel3.Controls.Add(lblUsername)
-        Panel3.Location = New Point(89, 121)
+        Panel3.Dock = DockStyle.Fill
+        Panel3.Location = New Point(0, 0)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(484, 228)
+        Panel3.Size = New Size(664, 428)
         Panel3.TabIndex = 2
         ' 
         ' cbxShow
         ' 
         cbxShow.AutoSize = True
-        cbxShow.Location = New Point(301, 116)
+        cbxShow.Location = New Point(400, 201)
         cbxShow.Name = "cbxShow"
         cbxShow.Size = New Size(15, 14)
         cbxShow.TabIndex = 5
@@ -103,10 +87,10 @@ Partial Class Create_Account
         ' 
         ' btnCreate
         ' 
-        btnCreate.BackColor = Color.DarkOrchid
+        btnCreate.BackColor = SystemColors.HotTrack
         btnCreate.FlatStyle = FlatStyle.Popup
         btnCreate.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCreate.Location = New Point(250, 167)
+        btnCreate.Location = New Point(366, 242)
         btnCreate.Name = "btnCreate"
         btnCreate.Size = New Size(75, 28)
         btnCreate.TabIndex = 4
@@ -116,7 +100,7 @@ Partial Class Create_Account
         ' txtPassword
         ' 
         txtPassword.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtPassword.Location = New Point(147, 108)
+        txtPassword.Location = New Point(253, 192)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(178, 29)
@@ -125,7 +109,7 @@ Partial Class Create_Account
         ' txtUsername
         ' 
         txtUsername.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtUsername.Location = New Point(147, 46)
+        txtUsername.Location = New Point(253, 135)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(178, 29)
         txtUsername.TabIndex = 2
@@ -133,8 +117,9 @@ Partial Class Create_Account
         ' lblPassword
         ' 
         lblPassword.AutoSize = True
+        lblPassword.BackColor = SystemColors.HotTrack
         lblPassword.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPassword.Location = New Point(35, 110)
+        lblPassword.Location = New Point(127, 200)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(86, 21)
         lblPassword.TabIndex = 1
@@ -143,8 +128,9 @@ Partial Class Create_Account
         ' lblUsername
         ' 
         lblUsername.AutoSize = True
+        lblUsername.BackColor = SystemColors.HotTrack
         lblUsername.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblUsername.Location = New Point(35, 46)
+        lblUsername.Location = New Point(122, 138)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(91, 21)
         lblUsername.TabIndex = 0
@@ -156,22 +142,16 @@ Partial Class Create_Account
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(664, 428)
         Controls.Add(Panel3)
-        Controls.Add(Panel2)
-        Controls.Add(Panel1)
         Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Create_Account"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Create_Account"
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnClose As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnCreate As Button
     Friend WithEvents txtPassword As TextBox

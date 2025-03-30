@@ -22,9 +22,9 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Panel1 = New Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Label3 = New Label()
-        Button2 = New Button()
+        btnClose = New Button()
         Panel2 = New Panel()
         cbxShow = New CheckBox()
         llbCreateAccount = New LinkLabel()
@@ -34,50 +34,41 @@ Partial Class Form1
         btnLogin = New Button()
         lblPassword = New Label()
         lblUsername = New Label()
-        Panel3 = New Panel()
-        Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(pbxImage, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Panel1
-        ' 
-        Panel1.BackColor = Color.DarkViolet
-        Panel1.BorderStyle = BorderStyle.FixedSingle
-        Panel1.Controls.Add(Label3)
-        Panel1.Controls.Add(Button2)
-        Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(0, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(730, 76)
-        Panel1.TabIndex = 0
-        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = SystemColors.ActiveCaption
         Label3.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(227, 18)
+        Label3.Location = New Point(219, 45)
         Label3.Name = "Label3"
         Label3.Size = New Size(198, 37)
         Label3.TabIndex = 1
         Label3.Text = "Administrator"
         ' 
-        ' Button2
+        ' btnClose
         ' 
-        Button2.BackColor = Color.Crimson
-        Button2.FlatStyle = FlatStyle.Popup
-        Button2.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button2.Location = New Point(625, 25)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(51, 30)
-        Button2.TabIndex = 0
-        Button2.Text = "X"
-        Button2.UseVisualStyleBackColor = False
+        btnClose.BackColor = Color.Crimson
+        btnClose.FlatStyle = FlatStyle.Popup
+        btnClose.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClose.Location = New Point(449, 244)
+        btnClose.Name = "btnClose"
+        btnClose.Size = New Size(73, 33)
+        btnClose.TabIndex = 0
+        btnClose.Text = "Close"
+        btnClose.UseVisualStyleBackColor = False
         ' 
         ' Panel2
         ' 
         Panel2.BackColor = Color.DarkViolet
+        Panel2.BackgroundImage = My.Resources.Resources.technology_3323683_1280
+        Panel2.BackgroundImageLayout = ImageLayout.Stretch
         Panel2.BorderStyle = BorderStyle.FixedSingle
+        Panel2.Controls.Add(btnClose)
+        Panel2.Controls.Add(Label3)
         Panel2.Controls.Add(cbxShow)
         Panel2.Controls.Add(llbCreateAccount)
         Panel2.Controls.Add(pbxImage)
@@ -86,26 +77,29 @@ Partial Class Form1
         Panel2.Controls.Add(btnLogin)
         Panel2.Controls.Add(lblPassword)
         Panel2.Controls.Add(lblUsername)
-        Panel2.Location = New Point(45, 107)
+        Panel2.Dock = DockStyle.Fill
+        Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(632, 261)
+        Panel2.Size = New Size(730, 445)
         Panel2.TabIndex = 1
         ' 
         ' cbxShow
         ' 
         cbxShow.AutoSize = True
-        cbxShow.Location = New Point(324, 126)
+        cbxShow.BackColor = SystemColors.ActiveCaption
+        cbxShow.Location = New Point(388, 209)
         cbxShow.Name = "cbxShow"
         cbxShow.Size = New Size(15, 14)
         cbxShow.TabIndex = 7
-        cbxShow.UseVisualStyleBackColor = True
+        cbxShow.UseVisualStyleBackColor = False
         ' 
         ' llbCreateAccount
         ' 
         llbCreateAccount.AutoSize = True
+        llbCreateAccount.BackColor = SystemColors.ActiveCaption
         llbCreateAccount.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         llbCreateAccount.LinkColor = Color.Black
-        llbCreateAccount.Location = New Point(191, 223)
+        llbCreateAccount.Location = New Point(255, 306)
         llbCreateAccount.Name = "llbCreateAccount"
         llbCreateAccount.Size = New Size(148, 25)
         llbCreateAccount.TabIndex = 6
@@ -114,9 +108,10 @@ Partial Class Form1
         ' 
         ' pbxImage
         ' 
+        pbxImage.BackColor = SystemColors.ActiveCaption
         pbxImage.BorderStyle = BorderStyle.FixedSingle
         pbxImage.Image = My.Resources.Resources.WhatsApp_Image_2025_02_19_at_06_10_35_68d602c8
-        pbxImage.Location = New Point(422, 61)
+        pbxImage.Location = New Point(486, 144)
         pbxImage.Name = "pbxImage"
         pbxImage.Size = New Size(98, 80)
         pbxImage.SizeMode = PictureBoxSizeMode.Zoom
@@ -126,7 +121,7 @@ Partial Class Form1
         ' txtPassword
         ' 
         txtPassword.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtPassword.Location = New Point(182, 120)
+        txtPassword.Location = New Point(246, 203)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
         txtPassword.Size = New Size(171, 29)
@@ -135,17 +130,17 @@ Partial Class Form1
         ' txtUsername
         ' 
         txtUsername.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtUsername.Location = New Point(182, 61)
+        txtUsername.Location = New Point(246, 144)
         txtUsername.Name = "txtUsername"
         txtUsername.Size = New Size(171, 29)
         txtUsername.TabIndex = 3
         ' 
         ' btnLogin
         ' 
-        btnLogin.BackColor = Color.DarkOrchid
+        btnLogin.BackColor = SystemColors.ActiveCaption
         btnLogin.FlatStyle = FlatStyle.Popup
         btnLogin.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnLogin.Location = New Point(279, 161)
+        btnLogin.Location = New Point(343, 244)
         btnLogin.Name = "btnLogin"
         btnLogin.Size = New Size(74, 33)
         btnLogin.TabIndex = 2
@@ -155,8 +150,9 @@ Partial Class Form1
         ' lblPassword
         ' 
         lblPassword.AutoSize = True
+        lblPassword.BackColor = SystemColors.ActiveCaption
         lblPassword.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPassword.Location = New Point(44, 120)
+        lblPassword.Location = New Point(130, 206)
         lblPassword.Name = "lblPassword"
         lblPassword.Size = New Size(86, 21)
         lblPassword.TabIndex = 1
@@ -165,37 +161,25 @@ Partial Class Form1
         ' lblUsername
         ' 
         lblUsername.AutoSize = True
+        lblUsername.BackColor = SystemColors.ActiveCaption
         lblUsername.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblUsername.Location = New Point(44, 63)
+        lblUsername.Location = New Point(130, 152)
         lblUsername.Name = "lblUsername"
         lblUsername.Size = New Size(91, 21)
         lblUsername.TabIndex = 0
         lblUsername.Text = "Username:"
-        ' 
-        ' Panel3
-        ' 
-        Panel3.BackColor = Color.DarkViolet
-        Panel3.BorderStyle = BorderStyle.FixedSingle
-        Panel3.Dock = DockStyle.Bottom
-        Panel3.Location = New Point(0, 403)
-        Panel3.Name = "Panel3"
-        Panel3.Size = New Size(730, 42)
-        Panel3.TabIndex = 2
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(730, 445)
-        Controls.Add(Panel3)
         Controls.Add(Panel2)
-        Controls.Add(Panel1)
         Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "LOG IN"
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
         Panel2.PerformLayout()
         CType(pbxImage, ComponentModel.ISupportInitialize).EndInit()
@@ -205,7 +189,7 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnClose As Button
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents btnLogin As Button
