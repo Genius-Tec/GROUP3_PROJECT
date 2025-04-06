@@ -26,7 +26,12 @@ Partial Class Form2
         lblStudentAttendanceSystem = New Label()
         btnBack = New Button()
         Panel2 = New Panel()
+        btnDelete = New Button()
+        btnDeleteAll = New Button()
+        btnSave = New Button()
+        btnEdit = New Button()
         btnExport = New Button()
+        btnClear = New Button()
         txtReportTime = New TextBox()
         txtStudentID = New TextBox()
         txtCourseCode = New TextBox()
@@ -35,11 +40,6 @@ Partial Class Form2
         lblCourseCode = New Label()
         dtpDate = New DateTimePicker()
         DataGridView1 = New DataGridView()
-        btnSave = New Button()
-        btnEdit = New Button()
-        btnDelete = New Button()
-        btnClear = New Button()
-        btnDeleteAll = New Button()
         Panel2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -47,7 +47,7 @@ Partial Class Form2
         ' lblStudentAttendanceSystem
         ' 
         lblStudentAttendanceSystem.AutoSize = True
-        lblStudentAttendanceSystem.BackColor = SystemColors.ActiveCaption
+        lblStudentAttendanceSystem.BackColor = SystemColors.GradientInactiveCaption
         lblStudentAttendanceSystem.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblStudentAttendanceSystem.Location = New Point(178, 18)
         lblStudentAttendanceSystem.Name = "lblStudentAttendanceSystem"
@@ -68,7 +68,7 @@ Partial Class Form2
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.DarkViolet
+        Panel2.BackColor = Color.GhostWhite
         Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), Image)
         Panel2.BackgroundImageLayout = ImageLayout.Stretch
         Panel2.Controls.Add(btnDelete)
@@ -92,9 +92,57 @@ Partial Class Form2
         Panel2.Size = New Size(802, 591)
         Panel2.TabIndex = 1
         ' 
+        ' btnDelete
+        ' 
+        btnDelete.BackColor = SystemColors.GradientInactiveCaption
+        btnDelete.FlatStyle = FlatStyle.Popup
+        btnDelete.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDelete.Location = New Point(445, 366)
+        btnDelete.Name = "btnDelete"
+        btnDelete.Size = New Size(75, 36)
+        btnDelete.TabIndex = 4
+        btnDelete.Text = "Delete"
+        btnDelete.UseVisualStyleBackColor = False
+        ' 
+        ' btnDeleteAll
+        ' 
+        btnDeleteAll.BackColor = SystemColors.GradientInactiveCaption
+        btnDeleteAll.FlatStyle = FlatStyle.Popup
+        btnDeleteAll.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnDeleteAll.Location = New Point(537, 366)
+        btnDeleteAll.Name = "btnDeleteAll"
+        btnDeleteAll.Size = New Size(141, 36)
+        btnDeleteAll.TabIndex = 5
+        btnDeleteAll.Text = "Delete All"
+        btnDeleteAll.UseVisualStyleBackColor = False
+        ' 
+        ' btnSave
+        ' 
+        btnSave.BackColor = SystemColors.GradientInactiveCaption
+        btnSave.FlatStyle = FlatStyle.Popup
+        btnSave.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSave.Location = New Point(162, 366)
+        btnSave.Name = "btnSave"
+        btnSave.Size = New Size(75, 36)
+        btnSave.TabIndex = 3
+        btnSave.Text = "Save"
+        btnSave.UseVisualStyleBackColor = False
+        ' 
+        ' btnEdit
+        ' 
+        btnEdit.BackColor = SystemColors.GradientInactiveCaption
+        btnEdit.FlatStyle = FlatStyle.Popup
+        btnEdit.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnEdit.Location = New Point(257, 366)
+        btnEdit.Name = "btnEdit"
+        btnEdit.Size = New Size(75, 36)
+        btnEdit.TabIndex = 4
+        btnEdit.Text = "Edit"
+        btnEdit.UseVisualStyleBackColor = False
+        ' 
         ' btnExport
         ' 
-        btnExport.BackColor = SystemColors.ActiveCaption
+        btnExport.BackColor = SystemColors.GradientInactiveCaption
         btnExport.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnExport.Location = New Point(588, 192)
         btnExport.Name = "btnExport"
@@ -102,6 +150,18 @@ Partial Class Form2
         btnExport.TabIndex = 6
         btnExport.Text = "Export"
         btnExport.UseVisualStyleBackColor = False
+        ' 
+        ' btnClear
+        ' 
+        btnClear.BackColor = SystemColors.GradientInactiveCaption
+        btnClear.FlatStyle = FlatStyle.Popup
+        btnClear.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnClear.Location = New Point(351, 366)
+        btnClear.Name = "btnClear"
+        btnClear.Size = New Size(75, 36)
+        btnClear.TabIndex = 4
+        btnClear.Text = "Clear"
+        btnClear.UseVisualStyleBackColor = False
         ' 
         ' txtReportTime
         ' 
@@ -130,7 +190,7 @@ Partial Class Form2
         ' lblReportTime
         ' 
         lblReportTime.AutoSize = True
-        lblReportTime.BackColor = SystemColors.ActiveCaption
+        lblReportTime.BackColor = SystemColors.GradientInactiveCaption
         lblReportTime.FlatStyle = FlatStyle.System
         lblReportTime.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblReportTime.Location = New Point(205, 260)
@@ -142,7 +202,7 @@ Partial Class Form2
         ' lblStudentID
         ' 
         lblStudentID.AutoSize = True
-        lblStudentID.BackColor = SystemColors.ActiveCaption
+        lblStudentID.BackColor = SystemColors.GradientInactiveCaption
         lblStudentID.FlatStyle = FlatStyle.System
         lblStudentID.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblStudentID.Location = New Point(221, 207)
@@ -154,7 +214,7 @@ Partial Class Form2
         ' lblCourseCode
         ' 
         lblCourseCode.AutoSize = True
-        lblCourseCode.BackColor = SystemColors.ActiveCaption
+        lblCourseCode.BackColor = SystemColors.GradientInactiveCaption
         lblCourseCode.FlatStyle = FlatStyle.System
         lblCourseCode.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblCourseCode.Location = New Point(203, 154)
@@ -173,73 +233,13 @@ Partial Class Form2
         ' 
         ' DataGridView1
         ' 
-        DataGridView1.BackgroundColor = SystemColors.ActiveCaption
+        DataGridView1.BackgroundColor = SystemColors.GradientInactiveCaption
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Dock = DockStyle.Bottom
         DataGridView1.Location = New Point(0, 426)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.Size = New Size(802, 165)
         DataGridView1.TabIndex = 2
-        ' 
-        ' btnSave
-        ' 
-        btnSave.BackColor = SystemColors.ActiveCaption
-        btnSave.FlatStyle = FlatStyle.Popup
-        btnSave.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnSave.Location = New Point(162, 366)
-        btnSave.Name = "btnSave"
-        btnSave.Size = New Size(75, 36)
-        btnSave.TabIndex = 3
-        btnSave.Text = "Save"
-        btnSave.UseVisualStyleBackColor = False
-        ' 
-        ' btnEdit
-        ' 
-        btnEdit.BackColor = SystemColors.ActiveCaption
-        btnEdit.FlatStyle = FlatStyle.Popup
-        btnEdit.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnEdit.Location = New Point(257, 366)
-        btnEdit.Name = "btnEdit"
-        btnEdit.Size = New Size(75, 36)
-        btnEdit.TabIndex = 4
-        btnEdit.Text = "Edit"
-        btnEdit.UseVisualStyleBackColor = False
-        ' 
-        ' btnDelete
-        ' 
-        btnDelete.BackColor = SystemColors.ActiveCaption
-        btnDelete.FlatStyle = FlatStyle.Popup
-        btnDelete.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnDelete.Location = New Point(445, 366)
-        btnDelete.Name = "btnDelete"
-        btnDelete.Size = New Size(75, 36)
-        btnDelete.TabIndex = 4
-        btnDelete.Text = "Delete"
-        btnDelete.UseVisualStyleBackColor = False
-        ' 
-        ' btnClear
-        ' 
-        btnClear.BackColor = SystemColors.ActiveCaption
-        btnClear.FlatStyle = FlatStyle.Popup
-        btnClear.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnClear.Location = New Point(351, 366)
-        btnClear.Name = "btnClear"
-        btnClear.Size = New Size(75, 36)
-        btnClear.TabIndex = 4
-        btnClear.Text = "Clear"
-        btnClear.UseVisualStyleBackColor = False
-        ' 
-        ' btnDeleteAll
-        ' 
-        btnDeleteAll.BackColor = SystemColors.ActiveCaption
-        btnDeleteAll.FlatStyle = FlatStyle.Popup
-        btnDeleteAll.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnDeleteAll.Location = New Point(537, 366)
-        btnDeleteAll.Name = "btnDeleteAll"
-        btnDeleteAll.Size = New Size(141, 36)
-        btnDeleteAll.TabIndex = 5
-        btnDeleteAll.Text = "Delete All"
-        btnDeleteAll.UseVisualStyleBackColor = False
         ' 
         ' Form2
         ' 

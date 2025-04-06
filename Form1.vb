@@ -48,33 +48,6 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub pbxImage_Click(sender As Object, e As EventArgs) Handles pbxImage.Click
-        Dim openFileDialog As New OpenFileDialog()
-        openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
-        If openFileDialog.ShowDialog() = DialogResult.OK Then
-            pbxImage.Image = Image.FromFile(openFileDialog.FileName)
-            SaveImageToDatabase(openFileDialog.FileName)
-        End If
-    End Sub
-
-    Private Sub SaveImageToDatabase(imagePath As String)
-        Try
-            con.Open()
-            Dim query As String = "INSERT INTO UserImages (Username, ImageData) VALUES (@username, @imageData)"
-            Using cmd As SqlCommand = New SqlCommand(query, con)
-                cmd.Parameters.AddWithValue("@username", txtUsername.Text)
-                Dim imageData As Byte() = File.ReadAllBytes(imagePath)
-                cmd.Parameters.AddWithValue("@imageData", imageData)
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Image saved successfully.")
-            End Using
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            con.Close()
-        End Try
-    End Sub
-
     Private Sub cbxShow_CheckedChanged(sender As Object, e As EventArgs) Handles cbxShow.CheckedChanged
         If cbxShow.Checked Then
             txtPassword.PasswordChar = ""

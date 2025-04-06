@@ -41,9 +41,9 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.BackColor = SystemColors.ActiveCaption
+        Label3.BackColor = SystemColors.GradientInactiveCaption
         Label3.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(219, 45)
+        Label3.Location = New Point(255, 70)
         Label3.Name = "Label3"
         Label3.Size = New Size(198, 37)
         Label3.TabIndex = 1
@@ -63,8 +63,8 @@ Partial Class Form1
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.DarkViolet
-        Panel2.BackgroundImage = My.Resources.Resources.technology_3323683_1280
+        Panel2.BackColor = SystemColors.GradientInactiveCaption
+        Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), Image)
         Panel2.BackgroundImageLayout = ImageLayout.Stretch
         Panel2.BorderStyle = BorderStyle.FixedSingle
         Panel2.Controls.Add(btnClose)
@@ -96,7 +96,7 @@ Partial Class Form1
         ' llbCreateAccount
         ' 
         llbCreateAccount.AutoSize = True
-        llbCreateAccount.BackColor = SystemColors.ActiveCaption
+        llbCreateAccount.BackColor = SystemColors.GradientInactiveCaption
         llbCreateAccount.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         llbCreateAccount.LinkColor = Color.Black
         llbCreateAccount.Location = New Point(255, 306)
@@ -108,12 +108,12 @@ Partial Class Form1
         ' 
         ' pbxImage
         ' 
-        pbxImage.BackColor = SystemColors.ActiveCaption
+        pbxImage.BackColor = SystemColors.GradientInactiveCaption
         pbxImage.BorderStyle = BorderStyle.FixedSingle
-        pbxImage.Image = My.Resources.Resources.WhatsApp_Image_2025_02_19_at_06_10_35_68d602c8
-        pbxImage.Location = New Point(486, 144)
+        pbxImage.Image = CType(resources.GetObject("pbxImage.Image"), Image)
+        pbxImage.Location = New Point(463, 103)
         pbxImage.Name = "pbxImage"
-        pbxImage.Size = New Size(98, 80)
+        pbxImage.Size = New Size(130, 129)
         pbxImage.SizeMode = PictureBoxSizeMode.Zoom
         pbxImage.TabIndex = 5
         pbxImage.TabStop = False
@@ -137,7 +137,7 @@ Partial Class Form1
         ' 
         ' btnLogin
         ' 
-        btnLogin.BackColor = SystemColors.ActiveCaption
+        btnLogin.BackColor = SystemColors.GradientInactiveCaption
         btnLogin.FlatStyle = FlatStyle.Popup
         btnLogin.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnLogin.Location = New Point(343, 244)
@@ -150,7 +150,7 @@ Partial Class Form1
         ' lblPassword
         ' 
         lblPassword.AutoSize = True
-        lblPassword.BackColor = SystemColors.ActiveCaption
+        lblPassword.BackColor = SystemColors.GradientInactiveCaption
         lblPassword.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPassword.Location = New Point(130, 206)
         lblPassword.Name = "lblPassword"
@@ -161,7 +161,7 @@ Partial Class Form1
         ' lblUsername
         ' 
         lblUsername.AutoSize = True
-        lblUsername.BackColor = SystemColors.ActiveCaption
+        lblUsername.BackColor = SystemColors.GradientInactiveCaption
         lblUsername.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblUsername.Location = New Point(130, 152)
         lblUsername.Name = "lblUsername"

@@ -38,9 +38,9 @@ Partial Class Create_Account
         ' lblCreateAccount
         ' 
         lblCreateAccount.AutoSize = True
-        lblCreateAccount.BackColor = SystemColors.HotTrack
+        lblCreateAccount.BackColor = SystemColors.GradientInactiveCaption
         lblCreateAccount.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblCreateAccount.Location = New Point(218, 20)
+        lblCreateAccount.Location = New Point(228, 68)
         lblCreateAccount.Name = "lblCreateAccount"
         lblCreateAccount.Size = New Size(213, 37)
         lblCreateAccount.TabIndex = 1
@@ -59,8 +59,8 @@ Partial Class Create_Account
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = Color.DarkViolet
-        Panel3.BackgroundImage = My.Resources.Resources.road_signs_7055475_960_720
+        Panel3.BackColor = Color.GhostWhite
+        Panel3.BackgroundImage = CType(resources.GetObject("Panel3.BackgroundImage"), Image)
         Panel3.BackgroundImageLayout = ImageLayout.Stretch
         Panel3.Controls.Add(btnBack)
         Panel3.Controls.Add(lblCreateAccount)
@@ -117,7 +117,7 @@ Partial Class Create_Account
         ' lblPassword
         ' 
         lblPassword.AutoSize = True
-        lblPassword.BackColor = SystemColors.HotTrack
+        lblPassword.BackColor = SystemColors.GradientInactiveCaption
         lblPassword.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblPassword.Location = New Point(127, 200)
         lblPassword.Name = "lblPassword"
@@ -128,7 +128,7 @@ Partial Class Create_Account
         ' lblUsername
         ' 
         lblUsername.AutoSize = True
-        lblUsername.BackColor = SystemColors.HotTrack
+        lblUsername.BackColor = SystemColors.GradientInactiveCaption
         lblUsername.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         lblUsername.Location = New Point(122, 138)
         lblUsername.Name = "lblUsername"
