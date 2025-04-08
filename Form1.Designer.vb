@@ -43,7 +43,7 @@ Partial Class Form1
         Label3.AutoSize = True
         Label3.BackColor = SystemColors.GradientInactiveCaption
         Label3.Font = New Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(255, 70)
+        Label3.Location = New Point(435, 23)
         Label3.Name = "Label3"
         Label3.Size = New Size(198, 37)
         Label3.TabIndex = 1
@@ -54,7 +54,8 @@ Partial Class Form1
         btnClose.BackColor = Color.Crimson
         btnClose.FlatStyle = FlatStyle.Popup
         btnClose.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnClose.Location = New Point(449, 244)
+        btnClose.ForeColor = SystemColors.ActiveCaptionText
+        btnClose.Location = New Point(812, 290)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(73, 33)
         btnClose.TabIndex = 0
@@ -63,8 +64,8 @@ Partial Class Form1
         ' 
         ' Panel2
         ' 
+        Panel2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Panel2.BackColor = SystemColors.GradientInactiveCaption
-        Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), Image)
         Panel2.BackgroundImageLayout = ImageLayout.Stretch
         Panel2.BorderStyle = BorderStyle.FixedSingle
         Panel2.Controls.Add(btnClose)
@@ -77,17 +78,16 @@ Partial Class Form1
         Panel2.Controls.Add(btnLogin)
         Panel2.Controls.Add(lblPassword)
         Panel2.Controls.Add(lblUsername)
-        Panel2.Dock = DockStyle.Fill
         Panel2.Location = New Point(0, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(730, 445)
+        Panel2.Size = New Size(984, 530)
         Panel2.TabIndex = 1
         ' 
         ' cbxShow
         ' 
         cbxShow.AutoSize = True
         cbxShow.BackColor = SystemColors.ActiveCaption
-        cbxShow.Location = New Point(388, 209)
+        cbxShow.Location = New Point(857, 222)
         cbxShow.Name = "cbxShow"
         cbxShow.Size = New Size(15, 14)
         cbxShow.TabIndex = 7
@@ -97,11 +97,11 @@ Partial Class Form1
         ' 
         llbCreateAccount.AutoSize = True
         llbCreateAccount.BackColor = SystemColors.GradientInactiveCaption
-        llbCreateAccount.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        llbCreateAccount.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
         llbCreateAccount.LinkColor = Color.Black
-        llbCreateAccount.Location = New Point(255, 306)
+        llbCreateAccount.Location = New Point(676, 358)
         llbCreateAccount.Name = "llbCreateAccount"
-        llbCreateAccount.Size = New Size(148, 25)
+        llbCreateAccount.Size = New Size(174, 25)
         llbCreateAccount.TabIndex = 6
         llbCreateAccount.TabStop = True
         llbCreateAccount.Text = "Create Account"
@@ -111,38 +111,38 @@ Partial Class Form1
         pbxImage.BackColor = SystemColors.GradientInactiveCaption
         pbxImage.BorderStyle = BorderStyle.FixedSingle
         pbxImage.Image = CType(resources.GetObject("pbxImage.Image"), Image)
-        pbxImage.Location = New Point(463, 103)
+        pbxImage.Location = New Point(108, 133)
         pbxImage.Name = "pbxImage"
-        pbxImage.Size = New Size(130, 129)
-        pbxImage.SizeMode = PictureBoxSizeMode.Zoom
+        pbxImage.Size = New Size(354, 355)
+        pbxImage.SizeMode = PictureBoxSizeMode.StretchImage
         pbxImage.TabIndex = 5
         pbxImage.TabStop = False
         ' 
         ' txtPassword
         ' 
-        txtPassword.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtPassword.Location = New Point(246, 203)
+        txtPassword.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
+        txtPassword.Location = New Point(637, 210)
         txtPassword.Name = "txtPassword"
         txtPassword.PasswordChar = "*"c
-        txtPassword.Size = New Size(171, 29)
+        txtPassword.Size = New Size(248, 31)
         txtPassword.TabIndex = 4
         ' 
         ' txtUsername
         ' 
-        txtUsername.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        txtUsername.Location = New Point(246, 144)
+        txtUsername.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
+        txtUsername.Location = New Point(637, 154)
         txtUsername.Name = "txtUsername"
-        txtUsername.Size = New Size(171, 29)
+        txtUsername.Size = New Size(248, 31)
         txtUsername.TabIndex = 3
         ' 
         ' btnLogin
         ' 
         btnLogin.BackColor = SystemColors.GradientInactiveCaption
         btnLogin.FlatStyle = FlatStyle.Popup
-        btnLogin.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnLogin.Location = New Point(343, 244)
+        btnLogin.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
+        btnLogin.Location = New Point(637, 290)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(74, 33)
+        btnLogin.Size = New Size(107, 44)
         btnLogin.TabIndex = 2
         btnLogin.Text = "Log In"
         btnLogin.UseVisualStyleBackColor = False
@@ -151,10 +151,10 @@ Partial Class Form1
         ' 
         lblPassword.AutoSize = True
         lblPassword.BackColor = SystemColors.GradientInactiveCaption
-        lblPassword.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblPassword.Location = New Point(130, 206)
+        lblPassword.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
+        lblPassword.Location = New Point(508, 210)
         lblPassword.Name = "lblPassword"
-        lblPassword.Size = New Size(86, 21)
+        lblPassword.Size = New Size(121, 25)
         lblPassword.TabIndex = 1
         lblPassword.Text = "Password:"
         ' 
@@ -162,10 +162,10 @@ Partial Class Form1
         ' 
         lblUsername.AutoSize = True
         lblUsername.BackColor = SystemColors.GradientInactiveCaption
-        lblUsername.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        lblUsername.Location = New Point(130, 152)
+        lblUsername.Font = New Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold)
+        lblUsername.Location = New Point(508, 156)
         lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(91, 21)
+        lblUsername.Size = New Size(125, 25)
         lblUsername.TabIndex = 0
         lblUsername.Text = "Username:"
         ' 
@@ -173,7 +173,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(730, 445)
+        ClientSize = New Size(984, 530)
         Controls.Add(Panel2)
         Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Icon = CType(resources.GetObject("$this.Icon"), Icon)

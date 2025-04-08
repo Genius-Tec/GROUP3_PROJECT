@@ -4,6 +4,8 @@ Imports Microsoft.Data.SqlClient
 Public Class Form2
     Dim connectionString As String = "Data Source=GENIUSWORLD\SQLEXPRESS;Initial Catalog=Attendance;Integrated Security=True;Trust Server Certificate=True"
     Dim selectedRecordId As Integer
+    Dim isCourseCodeMessageShown As Boolean = False
+    Dim isStudentIDCodeMessageShown As Boolean = False
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connectionString = $"Data Source=GENIUSWORLD\SQLEXPRESS;Initial Catalog=Attendance;Integrated Security=True;Trust Server Certificate=True"
@@ -93,31 +95,60 @@ Public Class Form2
                 Dim table As DataTable = New DataTable()
                 adapter.Fill(table)
                 DataGridView1.DataSource = table
+
+                ' Center-align the data in the DataGridView
+                For Each column As DataGridViewColumn In DataGridView1.Columns
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+                    column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+                Next
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading data: " & ex.Message)
         End Try
     End Sub
 
+
     Private Sub SaveData()
         Try
             Using con As SqlConnection = New SqlConnection(connectionString)
                 con.Open()
+
+
+                Dim checkQuery As String = "SELECT COUNT(*) FROM Dataset WHERE CourseID = @courseCode AND StudentID = @studentId AND DateOfAttendance = @dateOfAttendance"
+                Using checkCmd As SqlCommand = New SqlCommand(checkQuery, con)
+                    checkCmd.Parameters.AddWithValue("@courseCode", txtCourseCode.Text)
+                    checkCmd.Parameters.AddWithValue("@studentId", txtStudentID.Text)
+                    checkCmd.Parameters.AddWithValue("@dateOfAttendance", dtpDate.Value)
+
+                    Dim count As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+                    If count > 0 Then
+                        MessageBox.Show("This record already exists in the database. Please enter unique data.")
+                        Return
+                    End If
+                End Using
+
+
                 Dim query As String = "INSERT INTO Dataset (CourseID, StudentID, Report, DateOfAttendance) VALUES (@courseCode, @studentId, @reportTime, @dateOfAttendance)"
                 Using cmd As SqlCommand = New SqlCommand(query, con)
                     cmd.Parameters.AddWithValue("@courseCode", txtCourseCode.Text)
-                    cmd.Parameters.AddWithValue("@studentID", txtStudentID.Text)
+                    cmd.Parameters.AddWithValue("@studentId", txtStudentID.Text)
                     cmd.Parameters.AddWithValue("@reportTime", txtReportTime.Text)
                     cmd.Parameters.AddWithValue("@dateOfAttendance", dtpDate.Value)
                     cmd.ExecuteNonQuery()
                 End Using
             End Using
+
             MessageBox.Show("Data saved successfully.")
             LoadData()
         Catch ex As Exception
             MessageBox.Show("Error saving data: " & ex.Message)
         End Try
+
+        txtStudentID.Clear()
+
     End Sub
+
+
 
     Private Sub UpdateData()
         Try
@@ -169,7 +200,7 @@ Public Class Form2
                     Using reader As SqlDataReader = cmd.ExecuteReader()
                         Dim csvFilePath As String = "C:\Users\USER\Documents\AttendanceData.csv"
                         Using writer As StreamWriter = New StreamWriter(csvFilePath)
-                            ' Write the header
+
                             For i As Integer = 0 To reader.FieldCount - 1
                                 writer.Write(reader.GetName(i))
                                 If i < reader.FieldCount - 1 Then
@@ -178,7 +209,7 @@ Public Class Form2
                             Next
                             writer.WriteLine()
 
-                            ' Write the data
+
                             While reader.Read()
                                 For i As Integer = 0 To reader.FieldCount - 1
                                     writer.Write(reader(i).ToString())
@@ -196,5 +227,34 @@ Public Class Form2
         Catch ex As Exception
             MessageBox.Show("Error exporting data: " & ex.Message)
         End Try
+    End Sub
+
+
+    Private Sub txtCourseCode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCourseCode.KeyPress
+        If Not Char.IsLetterOrDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) AndAlso e.KeyChar <> " "c Then
+            e.Handled = True
+        ElseIf Char.IsLetter(e.KeyChar) AndAlso Not Char.IsUpper(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+
+        If Not isCourseCodeMessageShown Then
+            MessageBox.Show("Please type in CAPITAL letters.")
+            isCourseCodeMessageShown = True
+        End If
+    End Sub
+
+
+    Private Sub txtStudentID_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudentID.KeyPress
+        If Not Char.IsLetterOrDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsLetter(e.KeyChar) AndAlso Not Char.IsUpper(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+        If Not isStudentIDCodeMessageShown Then
+            MessageBox.Show("Please type in CAPITAL letters.")
+            isStudentIDCodeMessageShown = True
+        End If
     End Sub
 End Class
